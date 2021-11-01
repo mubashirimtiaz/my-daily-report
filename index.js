@@ -35,8 +35,8 @@ const nodemailer = require('nodemailer');
       <h1>Daily Report</h1>
       <h2>Weather</h2>
       <p>Forecast: <em>${forecastText}</em></p>
-      <p>Min: <em>${temperature.Mimimum.Value}°${temperature.Mimimum.Unit}</em></p>
-      <p>Max: <em>${temperature.Maximum.Value}°${temperature.Maximum.Unit}</em></p>
+      <p>Min: <strong><em>${temperature.Minimum.Value}°${temperature.Minimum.Unit}</em></strong></p>
+      <p>Max: <strong><em>${temperature.Maximum.Value}°${temperature.Maximum.Unit}</em></strong></p>
     `, // html body
   });
 
