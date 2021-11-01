@@ -14,6 +14,10 @@ const nodemailer = require('nodemailer');
 
   const temperature = dailyForecasts[0]?.Temperature;
 
+  const gifRequest = await fetch(`https://g.tenor.com/v1/trending?limit=1&contentfilter=low&key=${process.env.TENOR_API_KEY}`)
+  const {results} = await gifRequest.json();
+  const gifMedia = results[0].media[0].nanogif;
+
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -37,7 +41,8 @@ const nodemailer = require('nodemailer');
       <p>Forecast: <em>${forecastText}</em></p>
       <p>Min: <strong><em>${temperature.Minimum.Value}°${temperature.Minimum.Unit}</em></strong></p>
       <p>Max: <strong><em>${temperature.Maximum.Value}°${temperature.Maximum.Unit}</em></strong></p>
-    `, // html body
+      <p><img src=${gifMedia.url} alt="gif" /></p>
+      `, // html body
   });
 
 })();
