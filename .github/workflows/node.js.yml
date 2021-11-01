@@ -12,6 +12,7 @@ env:
   MAIL_USER_EMAIL: ${{secrets.MAIL_USER_EMAIL}}
   MAIL_USER_PASS: ${{secrets.MAIL_USER_PASS}}  
   MAIL_TO: ${{secrets.MAIL_TO}}
+  ACCUWEATHER_API_KEY: ${{secrets.ACCUWEATHER_API_KEY}}
 
 jobs:
   report:
