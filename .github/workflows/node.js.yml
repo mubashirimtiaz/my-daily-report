@@ -30,4 +30,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         
     - run: npm install
-    - run: node start
+    - run: node index.js
