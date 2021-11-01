@@ -34,6 +34,11 @@ const nodemailer = require('nodemailer');
     subject: "Daily Report", // Subject line
     text: `
       Daily Report
+      Weather
+      - Forecast: ${forecastText}
+      - Min : ${temperature.Minimum.Value}°${temperature.Minimum.Unit}
+      - Max: ${temperature.Maximum.Value}°${temperature.Maximum.Unit}
+      - Daily Gif: ${gifMedia.url}
     `, // plain text body
     html: `
       <h1>Daily Report</h1>
